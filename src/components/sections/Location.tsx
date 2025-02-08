@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { IoLocationSharp } from "react-icons/io5";
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import locationImageOne from '/src/images/amanda.jpg';
+import locationImageTwo from '/src/images/amanda.jpg';
 
 const Location: FC = () => {
   return (
@@ -18,8 +20,8 @@ const Location: FC = () => {
           someone is located. for example, would you be open to travel?
           Extra travel fees?</p>
         <div className="flex flex-col md:flex-row gap-8 mt-10 min-w-[50%] max-w-[100%]">
-          <StaticImage src="../../images/amanda.jpg" alt="Utah image" height={400} width={700} />
-          <StaticImage src="../../images/amanda.jpg" alt="Utah image" height={400} width={700} />
+          <img src={locationImageOne} alt="Utah image" className="w-[700px] h-[400px] object-cover" />
+          <img src={locationImageTwo} alt="Utah image" className="w-[700px] h-[400px] object-cover" />
         </div>
       </div>
     </div>

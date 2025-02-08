@@ -32,7 +32,8 @@ const PortfolioPage: FC = () => {
           <h1>Seniors</h1>
           <div>
             <h1>Graduation</h1>
-            <StaticImage src="https://photos.app.goo.gl/y5K3uh7hTxDYDVcU6" alt="Graduation" />
+            <img src="https://photos.app.goo.gl/REzmSZJ6o3t14Lvz7" alt="Google Photo" />
+
           </div>
         </div>
       </div>

@@ -6,7 +6,8 @@ import { HomeNavBar } from "../components/navigation/NavBar"
 import Location from "../components/sections/Location"
 import { Parallax } from 'react-parallax';
 import { StaticImage } from "gatsby-plugin-image"
-import landingImage from '../images/home-image.jpg';
+import amandaImage from '/src/images/amanda.jpg';
+import landingImage from '/src/images/home-image.jpg';
 
 const IndexPage: FC = () => {
   return (
@@ -32,10 +33,10 @@ const IndexPage: FC = () => {
       <HomeNavBar />
       <div className="flex flex-wrap justify-center gap-20 my-[10%] mx-[5%]">
         <div className="min-w-[300px] flex-shrink-0 items-center align-middle">
-          <StaticImage
-            src="../images/amanda.jpg"
+          <img
+            src={amandaImage}
             alt="photo of the lovely amanda"
-            className="aspect-[3/4] rounded-[50%] max-w-[400px]"
+            className="aspect-[3/4] object-cover rounded-[50%] max-w-[400px]"
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-3 max-w-[500px] min-w-[300px]">
