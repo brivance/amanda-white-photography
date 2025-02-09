@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { IoLocationSharp } from "react-icons/io5";
 import React from 'react';
-import locationImageOne from '/src/images/amanda.jpg';
-import locationImageTwo from '/src/images/amanda.jpg';
+import locationImageOne from '../../src/images/amanda.jpg';
+import locationImageTwo from '../../images/amanda.jpg';
 
 const Location: FC = () => {
   return (
