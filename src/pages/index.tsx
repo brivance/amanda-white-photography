@@ -6,7 +6,7 @@ import { HomeNavBar } from "../components/navigation/NavBar"
 import Location from "../components/sections/Location"
 import { Parallax } from 'react-parallax';
 import amandaImage from '../images/amanda.jpg';
-import landingImage from '../images/home-image.jpg';
+import landingImage from '../images/home-image.jpeg';
 
 const IndexPage: FC = () => {
   return (
