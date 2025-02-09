@@ -5,8 +5,8 @@ import { Footer } from "../components/navigation/Footer"
 import { HomeNavBar } from "../components/navigation/NavBar"
 import Location from "../components/sections/Location"
 import { Parallax } from 'react-parallax';
-import amandaImage from '../images/amanda.jpg';
-import landingImage from '../images/home-image.jpg';
+import amandaImage from '/src/images/amanda.jpg';
+import landingImage from '/src/images/home-image.jpg';
 
 const IndexPage: FC = () => {
   return (
