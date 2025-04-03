@@ -1,10 +1,10 @@
 import { signOut } from "next-auth/react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { useState } from "react";
 
 const LogoutButton = () => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleLogout = async () => {
     setLoading(true);

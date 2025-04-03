@@ -25,14 +25,14 @@ const Location: FC = () => {
             alt="Utah image"
             width={700}
             height={400}
-            className="object-cover"
+            className="object-cover max-w-[700px] max-h-[400px]"
           />
           <Image
             src={locationImageTwo}
             alt="Utah image"
             width={700}
             height={400}
-            className="object-cover"
+            className="object-cover max-w-[700px] max-h-[400px]"
           />
         </div>
       </div>

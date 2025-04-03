@@ -40,7 +40,7 @@ const NavBar: FC = () => {
   );
 };
 
-export const HomeNavBar: FC = () => {
+export const HomeNavBar: FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -68,13 +68,15 @@ export const HomeNavBar: FC = () => {
 
       <ul className={`list-none gap-20 flex flex-col md:flex-row justify-center m-0 p-0 ${isMenuOpen ? "block" : "hidden"
         } md:flex`}>
-        {navItems.map((item, index) => (
-          <li key={index}>
-            <a href={item.link} className="font-gotu text-black no-underline text-lg font-normal">
-              {item.name}
-            </a>
-          </li>
-        ))}
+        {navItems
+          .filter(item => item.name !== 'LOGOUT' || isAuthenticated)
+          .map((item, index) => (
+            <li key={index}>
+              <a href={item.link} className="font-gotu text-black no-underline text-lg font-normal">
+                {item.name}
+              </a>
+            </li>
+          ))}
       </ul>
     </nav>
   );

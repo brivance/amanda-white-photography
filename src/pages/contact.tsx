@@ -6,18 +6,14 @@ import { GetServerSidePropsContext } from "next";
 import { GoMail } from "react-icons/go";
 import Page from "../components/navigation/Page";
 import Title from "../components/sections/Title";
-import { requireAuth } from "@lib/auth";
+import { getSession } from "next-auth/react";
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const authResult = await requireAuth(context);
+  const session = await getSession({ req: context.req });
+  const isAuthenticated = !session ? false : true;
 
-  if (authResult.redirect) {
-    return authResult; // Redirect the user if not authenticated
-  }
-
-  // Any additional data for the page can be fetched here (right now nothing is in props)
   return {
-    props: {},
+    props: { isAuthenticated },
   };
 };
 

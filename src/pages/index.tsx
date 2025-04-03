@@ -1,52 +1,51 @@
 import * as React from "react"
 
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
-import { getSession, useSession } from "next-auth/react";
 
 import Footer from "../components/navigation/Footer"
 import { GetServerSidePropsContext } from "next";
 import { HomeNavBar } from "../components/navigation/NavBar"
 import Image from 'next/image';
 import Location from "../components/sections/Location"
-import amandaImage from '../images/amanda.jpg';
-import landingImage from '../images/home-image.jpeg';
-import { requireAuth } from "@lib/auth";
+// import amandaImage from '@images/amanda.jpg';
+import { getSession } from "next-auth/react";
+
+// import landingImage from '@images/home-image.jpg';
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const authResult = await requireAuth(context);
+  const session = await getSession({ req: context.req });
+  const isAuthenticated = !session ? false : true;
 
-  if (authResult.redirect) {
-    return authResult; // Redirect the user if not authenticated
-  }
-
-  // Any additional data for the page can be fetched here (right now nothing is in props)
   return {
-    props: {},
+    props: { isAuthenticated },
   };
 };
 
 
-const IndexPage = () => {
+const IndexPage = ({ isAuthenticated }: { isAuthenticated: boolean }) => {
 
   return (
     <div className="font-gotu">
-      {/* you may want to use react-scroll-parallax instead here */}
-      <ParallaxBanner style={{ aspectRatio: '7/3', backgroundImage: `url(${landingImage})` }}>
-        <ParallaxBannerLayer speed={-20} >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="font-unbounded text-black text-5xl lg:text-7xl text-ellipsis opacity-80 font-raleway font-thin text-center mx-3">
+
+      <ParallaxBanner style={{ aspectRatio: '16 / 9' }}>
+        <ParallaxBannerLayer image="/images/flower-field.jpeg" speed={-40} />
+        <ParallaxBannerLayer>
+          <div className="flex flex-col items-center justify-center h-full w-full font-raleway font-thin text-center opacity-80 mx-3 text-ellipsis text-off-white">
+            <h1 className=" text-5xl lg:text-7xl text-ellipsis">
               amanda white photography
             </h1>
-            <p className="font-unbounded text-black text-lg lg:text-3xl text-ellipsis opacity-80 font-raleway font-thin text-center mx-3">
+            <p className="font-unbounded text-lg lg:text-3xl text-ellipsis">
               her cute little logo that she&apos;ll be thinking of soon</p>
           </div>
         </ParallaxBannerLayer>
       </ParallaxBanner>
-      <HomeNavBar />
+      <HomeNavBar
+        isAuthenticated={isAuthenticated}
+      />
       <div className="flex flex-wrap justify-center gap-20 my-[10%] mx-[5%]">
         <div className="min-w-[300px] flex-shrink-0 items-center align-middle">
           <Image
-            src={amandaImage}
+            src="/images/amanda.jpg"
             alt="photo of the lovely amanda"
             className="aspect-[3/4] object-cover rounded-[50%]"
             width={400}
@@ -72,7 +71,7 @@ const IndexPage = () => {
       </div>
       <Location />
       <Footer />
-    </div>
+    </div >
   );
 };
 
