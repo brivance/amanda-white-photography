@@ -1,4 +1,5 @@
 This is a project to build out a website that showcases photos.
+Find the progress at https://amandawhitephoto.netlify.app/
 
 ## Tech Stack
 
