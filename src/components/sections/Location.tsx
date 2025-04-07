@@ -2,8 +2,8 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { IoLocationSharp } from "react-icons/io5";
 import React from 'react';
-import locationImageOne from '@images/amanda.jpg';
-import locationImageTwo from '@images/amanda.jpg';
+import mountains from '@images/mountains.png';
+import zions from '@images/zions.png';
 
 const Location: FC = () => {
   return (
@@ -21,14 +21,14 @@ const Location: FC = () => {
           Extra travel fees?</p>
         <div className="flex flex-col md:flex-row gap-8 mt-10 min-w-[50%] max-w-[100%]">
           <Image
-            src={locationImageOne}
+            src={mountains}
             alt="Utah image"
             width={700}
             height={400}
             className="object-cover max-w-[700px] max-h-[400px]"
           />
           <Image
-            src={locationImageTwo}
+            src={zions}
             alt="Utah image"
             width={700}
             height={400}

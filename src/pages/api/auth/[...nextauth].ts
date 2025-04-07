@@ -2,7 +2,6 @@ import NextAuth, { Session, SessionStrategy } from "next-auth";
 
 import CredentialsProvider from "next-auth/providers/credentials";
 import { JWT } from "next-auth/jwt";
-import { User } from ".prisma/client";
 
 type SafeUser = {
   id: string;

@@ -2,7 +2,6 @@ import * as React from "react"
 
 import { FC } from "react"
 import { GetServerSidePropsContext } from "next";
-import Image from "next/image";
 import { ImageHoverBlur } from "@src/components/sections/ImageHoverBlur";
 import Page from "../components/navigation/Page";
 import Title from "@components/sections/Title";
@@ -24,47 +23,47 @@ const PortfolioPage: FC = () => {
     <Page>
       <div className="font-gotu font-medium text-black flex flex-col items-center">
         <div className="w-full gap-10">
-          <Title title="Portfolio" />
+          <Title title=". . . the world through my lens" />
           <div className="my-11 text-black py-4 px-[20%] text-4xl grid grid-cols-3 grid-rows-2 gap-y-10 gap-x-24 text-center"
           >
             <ImageHoverBlur
-              src="/images/amanda.jpg"
+              src="/images/graduation-blue.jpeg"
               alt="Graduation"
               width={300}
               height={300}
               title="GRADUATION"
             />
             <ImageHoverBlur
-              src="/images/amanda.jpg"
+              src="/images/baby.png"
               alt="Newborn"
               width={300}
               height={300}
               title="NEWBORN"
             />
             <ImageHoverBlur
-              src="/images/amanda.jpg"
-              alt="Newborn"
+              src="/images/portrait.jpeg"
+              alt="Portraits"
               width={300}
               height={300}
               title="PORTRAITS"
             />
             <ImageHoverBlur
-              src="/images/amanda.jpg"
-              alt="Newborn"
+              src="/images/utah-mountain.jpeg"
+              alt="Nature"
               width={300}
               height={300}
-              title="LANDSCAPES"
+              title="NATURE"
             />
             <ImageHoverBlur
-              src="/images/amanda.jpg"
-              alt="Newborn"
+              src="/images/engagement.jpeg"
+              alt="Engagements"
               width={300}
               height={300}
               title="ENGAGEMENTS"
             />
             <ImageHoverBlur
-              src="/images/amanda.jpg"
-              alt="Newborn"
+              src="/images/senior.jpeg"
+              alt="Seniors"
               width={300}
               height={300}
               title="SENIORS"
@@ -73,7 +72,7 @@ const PortfolioPage: FC = () => {
         </div>
       </div>
       <div>
-        <div>
+        {/* <div>
           <h1>Newborn</h1>
         </div>
         <h1>Portraits</h1>
@@ -88,7 +87,7 @@ const PortfolioPage: FC = () => {
               width={500}
               height={300}
             /> */}
-        </div>
+        {/* </div> */}
       </div>
     </Page>
   )
