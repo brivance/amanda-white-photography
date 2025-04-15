@@ -14,13 +14,13 @@ const navItems: NavItem[] = [
   { name: 'PRICES', link: '/' },
   { name: 'REVIEWS', link: '/' },
   { name: 'CONTACT', link: '/contact' },
-  { name: 'LOGOUT', link: '/api/auth/signout' },
+  // { name: 'LOGOUT', link: '/api/auth/signout' },
 ];
 
 const NavBar: FC = () => {
   return (
-    <nav className="text-black p-7 flex justify-between sticky top-0 z-10 px-10">
-      <Link href="/" className="font-unbounded font-normal text-2xl">
+    <nav className={`font-gotu text-black p-7 bg-white bg-opacity-90 flex justify-between sticky top-0 z-10 px-10`}>
+      <Link href="/" className="font-normal text-2xl">
         amanda white photography
       </Link>
       <ul className="flex list-none justify-end gap-10 p-0">
@@ -29,7 +29,7 @@ const NavBar: FC = () => {
             <LogoutButton key={index} />
           ) : (
             <li key={index}>
-              <a href={item.link} className="font-gotu text-black no-underline text-lg font-normal">
+              <a href={item.link} className=" text-black no-underline text-lg font-normal">
                 {item.name}
               </a>
             </li>
@@ -44,7 +44,7 @@ export const HomeNavBar: FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white p-7 sticky top-0 z-10">
+    <nav className="font-unbounded bg-white bg-opacity-90 p-7 sticky top-0 z-10">
 
       <button
         className="block md:hidden text-black"
